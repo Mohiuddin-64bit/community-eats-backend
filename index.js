@@ -29,7 +29,7 @@ async function run() {
     const collection = db.collection("users");
 
     // User Registration
-    app.post("/api/v1/register", async (req, res) => {
+    app.post("/register", async (req, res) => {
       const { name, email, password } = req.body;
 
       // Check if email already exists
@@ -54,7 +54,7 @@ async function run() {
     });
 
     // User Login
-    app.post("/api/v1/login", async (req, res) => {
+    app.post("/login", async (req, res) => {
       const { email, password } = req.body;
 
       // Find user by email
@@ -86,7 +86,7 @@ async function run() {
     // ==============================================================
 
     // POST Supplies
-    app.post("/api/v1/supplies", async (req, res) => {
+    app.post("/supplies", async (req, res) => {
       try {
         const db = client.db("communityEats");
         const suppliesCollection = db.collection("allSupplies");
@@ -118,7 +118,7 @@ async function run() {
     });
 
     // GET All Supplies
-    app.get("/api/v1/supplies", async (req, res) => {
+    app.get("/supplies", async (req, res) => {
       try {
         const db = client.db("communityEats");
         const suppliesCollection = db.collection("allSupplies");
@@ -133,7 +133,7 @@ async function run() {
     });
 
     // GET Single Supplies
-    app.get("/api/v1/supplies/:id", async (req, res) => {
+    app.get("/supplies/:id", async (req, res) => {
       try {
         const db = client.db("communityEats");
         const suppliesCollection = db.collection("allSupplies");
@@ -157,7 +157,7 @@ async function run() {
     });
 
     // Update Single Supplies
-    app.patch("/api/v1/supplies/:id", async (req, res) => {
+    app.patch("/supplies/:id", async (req, res) => {
       try {
         const db = client.db("communityEats");
         const suppliesCollection = db.collection("allSupplies");
@@ -194,7 +194,7 @@ async function run() {
     });
 
     // DELETE supplies
-    app.delete("/api/v1/supplies/:id", async (req, res) => {
+    app.delete("/supplies/:id", async (req, res) => {
       try {
         const db = client.db("communityEats");
         const suppliesCollection = db.collection("allSupplies");
